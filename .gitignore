@@ -1,0 +1,10 @@
+dist
+reports
+node_modules
+.DS_Store
+*.log
+storybook-static
+public
+.vscode
+.idea/
+*.wat

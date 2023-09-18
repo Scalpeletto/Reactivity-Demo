@@ -1,0 +1,41 @@
+{
+    "compilerOptions": {
+      "module": "ESNext",
+      "target": "ESNext",
+      "moduleResolution": "node",
+      "declaration": false,
+      "jsx": "react",
+      "sourceMap": true,
+      "strict": true,
+      "esModuleInterop": true,
+      "noImplicitAny": true,  
+      "outDir": "dist",
+      "allowSyntheticDefaultImports": true,
+      "suppressImplicitAnyIndexErrors": true,
+      "baseUrl": ".",
+      "paths": {
+        "@/*": [
+          "src/*"
+        ],
+      },
+      "typeRoots": [
+        "./node_modules/@types",
+        "./src/types"
+      ],
+      "types": [
+        "node",
+        "jest"
+      ],
+      "lib": [
+        "es2017",
+        "esnext",
+        "dom"
+      ],
+      "noEmit": true
+    },
+    "include": [
+      "src/**/*.ts",
+      "src/**/*.tsx",
+    ],  
+    "exclude": ["node_modules", "dist", "reports", "*.spec.ts", "*.spec.tsx"]
+}
