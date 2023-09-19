@@ -12,19 +12,35 @@ import * as ReactDOM from 'react-dom';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import routes from '@/constants/routes';
-import Home from '@/components/Home';
-import Away from '@/components/Away';
+import Home from '@/pages/Home';
+import SafariPage from '@/pages/Safari';
+import { StoreProvider } from '@/store/setupContext';
 
 import '@/style/base.scss';
 
+(() => {
+  // Ensure that transpilation for mobx is configured correctly per https://mobx.js.org/installation.html#use-spec-compliant-transpilation-for-class-properties
+  if (
+    !new (class {
+      x = 0;
+    // eslint-disable-next-line no-prototype-builtins
+    })().hasOwnProperty('x')
+  ) { throw new Error('Transpiler is not configured correctly'); }
+})();
+
 function App(): JSX.Element {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path={routes.home} element={<Home message="This is the home page." />} />
-        <Route path={routes.away} element={<Away message="This is the not home page." />} />
-      </Routes>
-    </BrowserRouter>
+    <StoreProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path={routes.home}
+            element={<Home message="This is the home page." />}
+          />
+          <Route path={routes.safari} element={<SafariPage />} />
+        </Routes>
+      </BrowserRouter>
+    </StoreProvider>
   );
 }
 

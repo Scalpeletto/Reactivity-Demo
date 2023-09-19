@@ -32,7 +32,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.join(paths.src, 'index.html'),
       hash: true,
-      favicon: path.resolve(paths.src, 'assets/images/favicon.png'),
+      // favicon: path.resolve(paths.src, 'assets/images/favicon.png'),
     }),
   ],
   module: {

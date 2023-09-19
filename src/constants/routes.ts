@@ -1,4 +1,4 @@
 export default {
   home: '/',
-  away: '/away',
+  safari: '/safari',
 };

@@ -12,6 +12,10 @@
     "plugins": [
       ["@babel/plugin-transform-runtime", { "corejs": 3, "proposals": true }],
       ["@babel/plugin-syntax-dynamic-import"],
-      ["@babel/plugin-syntax-import-meta"]
-    ]
+      ["@babel/plugin-syntax-import-meta"],
+      ["@babel/plugin-transform-class-properties"]
+    ],
+    "assumptions": {
+      "setPublicClassFields": false
+  }
 }  
