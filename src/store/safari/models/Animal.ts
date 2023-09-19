@@ -5,6 +5,8 @@ interface Animal {
     type: AnimalType,
     energyLevel: number,
     alive: boolean,
+    pointsPerTick: number,
+    energyLossPerTick: number,
 }
 
 export default Animal;

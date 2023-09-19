@@ -20,6 +20,8 @@ const newGiraffe = (): Animal => ({
   type: AnimalType.Giraffe,
   energyLevel: 100,
   alive: true,
+  pointsPerTick: 100,
+  energyLossPerTick: 10,
 });
 
 const newCat = (): Animal => ({
@@ -27,6 +29,8 @@ const newCat = (): Animal => ({
   type: AnimalType.Cat,
   energyLevel: 40,
   alive: true,
+  pointsPerTick: 75,
+  energyLossPerTick: 5,
 });
 
 const newUnknown = (): Animal => ({
@@ -34,6 +38,8 @@ const newUnknown = (): Animal => ({
   type: AnimalType.Unknown,
   energyLevel: faker.number.int({ min: 40, max: 200 }),
   alive: true,
+  pointsPerTick: faker.number.int({ min: 1, max: 200 }),
+  energyLossPerTick: faker.number.int({ min: 1, max: 20 }),
 });
 
 export default newAnimal;

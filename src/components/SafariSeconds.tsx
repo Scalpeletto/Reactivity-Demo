@@ -3,23 +3,28 @@ import { observer } from 'mobx-react-lite';
 
 import React from 'react';
 
+import { Text, useMantineTheme, Flex } from '@mantine/core';
+
 const SafariSeconds = observer(() => {
+  const theme = useMantineTheme();
   const store = useStore();
   const { safari } = store;
   const { currentlyOnSafari, secondsPassed } = safari;
 
   return (
-    <div>
-      <h2>
-        The safari is currently:
+    <Flex gap="xs">
+      <Text c={currentlyOnSafari ? theme.colors.teal[6] : theme.colors.red[4]}>
         {currentlyOnSafari ? 'Running' : 'Not Running'}
-      </h2>
-      <p>
-        Seconds on safari:
+      </Text>
+      <Text>
+        (
         {' '}
         {secondsPassed}
-      </p>
-    </div>
+        {' '}
+        Seconds Total
+        )
+      </Text>
+    </Flex>
   );
 });
 

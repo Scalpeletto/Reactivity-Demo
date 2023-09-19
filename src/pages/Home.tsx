@@ -1,19 +1,25 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { observer } from 'mobx-react-lite';
+
+import { Container } from '@mantine/core';
 
 import routes from '@/constants/routes';
+import NavigationButton from '@/components/NavigationButton';
 
-export interface HomeProps {
-    message: string;
-}
+const HomePage = observer(() => (
+  <Container
+    fluid
+    style={{
+      minHeight: '100vh',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor: 'whitesmoke',
+      padding: '1em',
+    }}
+  >
+    <NavigationButton route={routes.safari} text="Play SAFARI" />
+  </Container>
+));
 
-export default function Home(props: HomeProps): JSX.Element {
-  const { message }: { message: string } = props;
-  return (
-    <div>
-      {message}
-      <br />
-      <Link to={routes.safari}>Safari</Link>
-    </div>
-  );
-}
+export default HomePage;
